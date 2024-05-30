@@ -11,7 +11,7 @@
  ********************************************************************************/
 const express = require("express");
 const app = express();
-const HTTP_PORT = process.env.PORT || 8000;
+const API_PORT = process.env.PORT || 8000;
 const legoData = require("./modules/legoSets");
 
 //route
@@ -32,7 +32,7 @@ legoData.initialize().then(() => {
 
   //GET LEGO SETS NUM-DEMO
   app.get("/lego/sets/num-demo", async (req, res) => {
-    const demoNum = "0011-3";
+    const demoNum = "03093-1";
     try {
       const sets = await legoData.getSetByNum(demoNum);
       res.json(sets);
@@ -54,7 +54,7 @@ legoData.initialize().then(() => {
   });
 
   //SERVER RUNNING
-  app.listen(HTTP_PORT, () => {
-    console.log(`Server running on port ${HTTP_PORT}`);
+  app.listen(API_PORT, () => {
+    console.log(`Server running on port ${API_PORT}`);
   });
 });
