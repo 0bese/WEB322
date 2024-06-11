@@ -2095,10 +2095,6 @@ html {
   z-index: 50;
 }
 
-.m-auto {
-  margin: auto;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2123,10 +2119,6 @@ html {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mt-24 {
-  margin-top: 6rem;
 }
 
 .block {
@@ -2173,6 +2165,10 @@ html {
   width: 140px;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
 .max-w-screen-xl {
   max-width: 1280px;
 }
@@ -2187,10 +2183,6 @@ html {
 
 .flex-none {
   flex: none;
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-col {
@@ -2266,15 +2258,6 @@ html {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.pt-24 {
-  padding-top: 6rem;
 }
 
 .text-center {
