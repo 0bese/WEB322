@@ -1,19 +1,21 @@
 /********************************************************************************
- * WEB322 – Assignment 03
+ *  WEB322 – Assignment 03
  *
- * I declare that this assignment is my own work in accordance with Seneca's
- * Academic Integrity Policy:
+ *  I declare that this assignment is my own work in accordance with Seneca's
+ *  Academic Integrity Policy:
  *
- * https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+ *  https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
  *
- * Name: Kojo Anyane Obese Student ID: 137653226 Date: May 23, 2024
+ *  Name: KOJO ANYANE OBESE Student ID: 137653226 Date: JUNE 06, 2024
+ *
+ *  Published URL: https://web322mylegoapp.vercel.app/
  *
  ********************************************************************************/
+
 const express = require("express");
 const legoData = require("./modules/legoSets");
-const app = express();
 const path = require("path");
-const { log } = require("console");
+const app = express();
 
 const API_PORT = process.env.PORT || 8000;
 
@@ -52,7 +54,7 @@ app.get("/lego/sets", async (req, res) => {
 });
 
 //GET LEGO SETS NUM-DEMO
-app.get("/lego/sets/:num-demo", async (req, res) => {
+app.get("/lego/sets/:set_num", async (req, res) => {
   legoData.initialize().then(() => {
     legoData
       .getSetByNum(req.params.set_num)
