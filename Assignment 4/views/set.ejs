@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="/css/main.css" />
     <title><%= legoSet.name %></title>
   </head>
-  <body>
+  <body data-theme="cupcake">
     <%- include('partials/navbar', {page:''}) %>
 
-    <div class="container mx-auto">
+    <div class="container mx-auto h-screen">
       <div class="hero bg-base-200 rounded-lg p-6">
         <div class="hero-content text-center">
           <div class="max-w-md">
@@ -50,10 +50,25 @@
         </div>
       </div>
     </div>
+    <!-- Footer -->
+    <%- include('partials/footer', {page: '/lego/sets'}) %>
   </body>
 
   <script>
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute("data-theme");
+      const newTheme = currentTheme === "cupcake" ? "night" : "cupcake";
+      body.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    }
+    function setInitialTheme() {
+      const savedTheme = localStorage.getItem("theme");
+      document.body.setAttribute("data-theme", savedTheme || "cupcake");
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
+      setInitialTheme();
       fetch("https://quotable.io/random")
         .then((response) => response.json())
         .then((data) => {

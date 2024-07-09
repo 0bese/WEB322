@@ -12,15 +12,8 @@
     <%- include('partials/navbar', {page: '/lego/sets'}) %>
 
     <!-- Main -->
-    <div class="container mx-auto">
-      <div class="flex justify-center">
-        <div role="tablist" class="tabs tabs-boxed w-4/12">
-          <a role="tab" class="tab">TECHNIC</a>
-          <a role="tab" class="tab tab-active">SUPPLEMENTAL</a>
-          <a role="tab" class="tab">CONSTRUCTION</a>
-        </div>
-      </div>
-      <div class="overflow-x-auto">
+    <div class="container flex justify-center mx-auto">
+      <div class="overflow-x-auto max-w-7xl">
         <table class="table">
           <!-- head -->
           <thead>
@@ -33,37 +26,35 @@
           </thead>
           <tbody>
             <!-- row 1 -->
-            <% console.log(legoSet)%> <% legoSet.map(set =>{ %>
+            <% legoSet.map(set =>{ %>
             <tr>
               <td>
                 <div class="flex items-center gap-3">
                   <div class="avatar">
-                    <div class="mask mask-squircle h-32 w-32">
+                    <div class="h-56 w-56 rounded-md">
                       <img src="<%= set.img_url %>" alt="set" />
                     </div>
                   </div>
                   <div>
-                    <div class="font-bold"><%= set.name %></div>
+                    <div class="font-bold sm:w-40"><%= set.name %></div>
                   </div>
                 </div>
               </td>
               <td>
                 <a
-                  class="btn btn-ghost btn-sm uppercase"
+                  class="btn btn-active btn-neutral"
                   href="/lego/sets?theme=<%= set.theme %>"
                   ><%= set.theme %></a
                 >
                 <br />
-                <span class="badge badge-ghost badge-sm">
-                  <%= set.theme_id %>
-                </span>
+                <!-- <span class="badge badge-ghost badge-sm">
+              
+                </span> -->
               </td>
               <td><%= set.year %></td>
               <td><%= set.num_parts %></td>
               <th>
-                <a
-                  class="btn btn-ghost btn-sm"
-                  href="/lego/sets/<%= set.set_num %>"
+                <a class="btn btn-outline" href="/lego/sets/<%= set.set_num %>"
                   >Details</a
                 >
               </th>
