@@ -77,5 +77,19 @@
     </div>
     <!-- Footer -->
     <%- include('partials/footer', {page: '/lego/sets'}) %>
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute("data-theme");
+        const newTheme = currentTheme === "cupcake" ? "night" : "cupcake";
+        body.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      }
+      function setInitialTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        document.body.setAttribute("data-theme", savedTheme || "cupcake");
+      }
+      document.addEventListener("DOMContentLoaded", setInitialTheme);
+    </script>
   </body>
 </html>
