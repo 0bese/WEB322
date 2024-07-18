@@ -3292,6 +3292,10 @@ html {
   min-height: 100vh;
 }
 
+.min-h-\[90vh\] {
+  min-height: 90vh;
+}
+
 .w-10 {
   width: 2.5rem;
 }

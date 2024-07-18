@@ -71,6 +71,13 @@ async function initialize() {
     sequelize
       .sync()
       .then(() => {
+        // try {
+        //   await Theme.bulkCreate(themeData);
+        // await Set.bulkCreate(setData);
+        // resolve();
+        // } catch (error) {
+        //   console.error("could not sync ",error)
+        // }
         console.log("Database synchronized successfully.");
         resolve();
       })
@@ -85,10 +92,6 @@ async function getAllSets() {
   return new Promise((resolve, reject) => {
     Set.findAll({ include: [Theme] })
       .then((sets) => {
-        console.log("********************************************");
-        let r = await sets.Theme;
-        console.log(r);
-        console.log("********************************************");
         resolve(sets);
       })
       .catch((err) => {
